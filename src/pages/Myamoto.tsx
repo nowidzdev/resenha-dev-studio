@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import CustomCursor from "@/components/CustomCursor";
 import ProfileNav from "@/components/ProfileNav";
 import ScrollArrow from "@/components/ScrollArrow";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
 const Myamoto = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <CustomCursor />

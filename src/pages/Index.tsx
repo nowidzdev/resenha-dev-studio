@@ -28,15 +28,18 @@ const Index = () => {
         </div>
 
         {/* Meet the Team button */}
-        <a
-          href="#team"
-          className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-primary/40 bg-primary/10 text-primary font-semibold text-sm tracking-wide hover:bg-primary/20 hover:border-primary/60 transition-all duration-300"
+        <button
+          onClick={() => {
+            const el = document.getElementById("team");
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full border border-border text-foreground font-medium text-sm tracking-wide hover:border-muted-foreground transition-all duration-300"
         >
           Meet the Team
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-0.5">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
             <path d="M8 3v10M8 13l4-4M8 13L4 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-        </a>
+        </button>
       </section>
 
       {/* TEAM */}

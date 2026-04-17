@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
@@ -6,13 +7,18 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 import { MyamotoLogo, NowidzLogo } from "@/config/branding";
 
 const Index = () => {
+  useEffect(() => {
+    document.documentElement.classList.add("snap-page");
+    return () => document.documentElement.classList.remove("snap-page");
+  }, []);
+
   return (
     <>
       <CustomCursor />
       <Navbar />
 
       {/* HERO */}
-      <section id="hero" className="relative min-h-screen flex flex-col justify-center items-center text-center px-8 py-24">
+      <section id="hero" className="snap-section relative min-h-screen flex flex-col justify-center items-center text-center px-8 py-24">
         <p className="text-xs tracking-[2px] uppercase text-muted-foreground mb-6">
           Roblox Studio Developers
         </p>

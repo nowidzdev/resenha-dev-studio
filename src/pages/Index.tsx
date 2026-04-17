@@ -3,6 +3,7 @@ import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import ScrollArrow from "@/components/ScrollArrow";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import { MyamotoLogo, NowidzLogo } from "@/config/branding";
 
 const Index = () => {
   return (
@@ -55,7 +56,7 @@ const Index = () => {
           <RevealOnScroll delay={0.1}>
             <Link to="/myamoto" className="block">
               <div className="bg-card border border-border rounded-xl p-12 transition-all duration-300 hover:-translate-y-2 hover:border-primary h-full">
-                <div className="text-3xl font-extrabold mb-6">M.</div>
+                <MyamotoLogo className="w-12 h-12 mb-6 text-foreground" />
                 <h3 className="text-3xl font-bold mb-2">Myamoto</h3>
                 <p className="text-sm text-primary font-medium mb-6">3D Modeler & VFX Maker</p>
                 <p className="text-muted-foreground mb-8 text-[0.95rem]">
@@ -73,7 +74,7 @@ const Index = () => {
           <RevealOnScroll delay={0.2}>
             <Link to="/nowidz" className="block">
               <div className="bg-card border border-border rounded-xl p-12 transition-all duration-300 hover:-translate-y-2 hover:border-primary h-full">
-                <div className="text-3xl font-extrabold mb-6">N.</div>
+                <NowidzLogo className="w-12 h-12 mb-6 text-foreground" />
                 <h3 className="text-3xl font-bold mb-2">Nowidz</h3>
                 <p className="text-sm text-primary font-medium mb-6">Full-Stack Dev & UI Maker</p>
                 <p className="text-muted-foreground mb-8 text-[0.95rem]">

@@ -3,6 +3,7 @@ import CustomCursor from "@/components/CustomCursor";
 import ProfileNav from "@/components/ProfileNav";
 import ScrollArrow from "@/components/ScrollArrow";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import { NowidzLogo } from "@/config/branding";
 
 const Nowidz = () => {
   useEffect(() => {
@@ -17,9 +18,12 @@ const Nowidz = () => {
       {/* HERO */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center px-8 md:px-16 py-24 max-w-[1000px] mx-auto">
         <p className="text-xs tracking-[2px] uppercase text-primary mb-4">The Dev Engine</p>
-        <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-extrabold leading-none tracking-[-2px] mb-8">
-          Nowidz.
-        </h1>
+        <div className="flex items-center gap-5 mb-8">
+          <NowidzLogo className="w-16 h-16 md:w-20 md:h-20 text-primary shrink-0" />
+          <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-extrabold leading-none tracking-[-2px]">
+            Nowidz.
+          </h1>
+        </div>
 
         <div className="max-w-[800px] mt-4 space-y-6">
           <p className="text-lg text-muted-foreground font-light leading-relaxed">

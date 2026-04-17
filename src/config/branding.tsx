@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import myamotoLogoSrc from "@/assets/myamoto-logo.png";
+import nowidzLogoSrc from "@/assets/nowidz-logo.png";
 
 /**
  * 🎨 BRANDING CONFIG

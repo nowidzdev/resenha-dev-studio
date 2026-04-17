@@ -50,7 +50,7 @@ const Index = () => {
       </section>
 
       {/* TEAM */}
-      <section id="team" className="relative min-h-screen flex flex-col justify-center items-center px-8 py-24 border-t border-border">
+      <section id="team" className="snap-section relative min-h-screen flex flex-col justify-center items-center px-8 py-24 border-t border-border">
         <ScrollArrow direction="up" label="Top" targetId="hero" />
 
         <RevealOnScroll>
@@ -100,7 +100,7 @@ const Index = () => {
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="relative min-h-screen flex flex-col justify-center items-center px-8 py-24 border-t border-border">
+      <section id="projects" className="snap-section relative min-h-screen flex flex-col justify-center items-center px-8 py-24 border-t border-border">
         <ScrollArrow direction="up" label="Team" targetId="team" />
 
         <RevealOnScroll>

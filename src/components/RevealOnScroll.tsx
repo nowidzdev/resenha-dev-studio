@@ -15,12 +15,14 @@ const RevealOnScroll = ({ children, className = "", delay = 0 }: Props) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 }
     );
-    if (ref.current) observer.observe(ref.current);
+    const el = ref.current;
+    if (el) observer.observe(el);
     return () => observer.disconnect();
   }, []);
 

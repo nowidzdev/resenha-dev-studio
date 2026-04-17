@@ -1,14 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, MouseEvent } from "react";
 import { Link } from "react-router-dom";
+import { TeamLogo } from "@/config/branding";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleSmoothScroll = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <nav
@@ -18,12 +25,28 @@ const Navbar = () => {
           : "border-transparent"
       }`}
     >
-      <Link to="/" className="font-extrabold text-xl tracking-tight">
-        Resenha<span className="text-primary">.</span>
+      <Link to="/" className="text-xl">
+        <TeamLogo />
       </Link>
       <ul className="hidden md:flex gap-8 list-none">
-        <li><a href="#team" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium">Team</a></li>
-        <li><a href="#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium">Projects</a></li>
+        <li>
+          <a
+            href="#team"
+            onClick={(e) => handleSmoothScroll(e, "team")}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
+          >
+            Team
+          </a>
+        </li>
+        <li>
+          <a
+            href="#projects"
+            onClick={(e) => handleSmoothScroll(e, "projects")}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
+          >
+            Projects
+          </a>
+        </li>
       </ul>
     </nav>
   );
